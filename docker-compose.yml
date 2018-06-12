@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    db:
+        image: mariadb:10.3.7
+        restart: always
+        ports:
+            - "3310:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: nicegame14
+            MYSQL_DATABASE: wishket_purple
+            MYSQL_USER: wishket
+            MYSQL_PASSWORD: nicegame14
+    web:
+        build: .
+        command: python source/manage.py runserver 0.0.0.0:8000
+        volumes:
+            - .:/app
+        ports:
+            - "8001:8000"
+        depends_on:
+            - db
