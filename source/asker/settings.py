@@ -66,6 +66,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 WSGI_APPLICATION = 'asker.wsgi.application'
 
 
