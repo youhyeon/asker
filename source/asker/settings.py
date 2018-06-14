@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'asker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file':
-                os.path.join(DJANGO_ROOT, 'local_database.conf'),
-        }
+        'USER': 'wishket',
+        'PASSWORD': 'nicegame14',
+        'HOST': 'db',
+        'NAME': 'wishket_purple'
     }
 }
 
