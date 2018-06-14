@@ -17,9 +17,14 @@ services:
             MYSQL_PASSWORD: nicegame14
         networks:
             - asker
+        healthcheck:
+            test: ["CMD", "/usr/bin/mysql", "--user=wishket", "--password=nicegame14", "--execute", "SHOW DATABASES;"]
+            interval: 5s
+            timeout: 5s
+            retries: 5
     web:
         build: .
-        command: python source/manage.py runserver 0.0.0.0:8000
+        command: bash -c "cd /app/source && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
         volumes:
             - .:/app
         restart: on-failure
