@@ -1,9 +1,5 @@
 version: '3'
 
-networks:
-    asker:
-        name: asker
-
 services:
     db:
         image: mariadb:10.3.7
