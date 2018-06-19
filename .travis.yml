@@ -1,12 +1,10 @@
 sudo: required
 
-language: python
-
 services:
   - docker
 
 before_install:
-  - docker-compose -f docker-compose.yml up --build -d
+  - docker-compose up --build -d
 
 after_script:
-  - docker-compose -f docker-compose.yml down
+  - docker-compose down
