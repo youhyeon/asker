@@ -1,4 +1,8 @@
-version: '3'
+version: '3.5'
+
+networks:
+    asker:
+        name: asker
 
 services:
     db:
